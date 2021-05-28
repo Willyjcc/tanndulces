@@ -1,0 +1,144 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" (click)="irdashboard()">
+      <ion-icon name="arrow-back"></ion-icon>
+    </ion-buttons>
+    <ion-grid class="menu-pc-blog">
+      <ion-row>
+        <ion-col>
+          <a href="/home"><img src="/assets/img/logo-sticky.png" class="logo-sticky" alt="TannDulces"/></a>  
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <ion-grid class="container-general">
+    <ion-row class="ocultar-movil">
+      <ion-col size="8" >
+        <div *ngIf="urlImage | async; else btnDisabled"> Imagen Actualizada </div>
+        <ng-template #btnDisabled>
+          Imagen Actual 
+        </ng-template>
+        <br>
+        <img *ngIf="todo.img" src="{{todo.img}}" width="100%">
+        <ion-card *ngIf="todo.img == '' " class="fucsia">
+          <ion-card-content>
+            <img src="/assets/img/preview.png" width="100%">
+          </ion-card-content>  
+        </ion-card>
+        <h5>Seleccionar image:</h5>
+        <input type="file" accept=".png, .jpg" (change)="onUpload($event)">
+        <br>
+        <input id="imagen" type="hidden" [(ngModel)]="todo.img" [value]="urlImage | async">
+        
+        
+        
+        <ion-item *ngIf="todo">
+          <ion-input type="text" placeholder="TITULO" [(ngModel)]="todo.task" required></ion-input>
+        </ion-item>
+        <ion-item *ngIf="todo">
+            <ion-textarea placeholder="Descripción Home" [(ngModel)]="todo.description" required></ion-textarea>
+        </ion-item>
+        <ion-item *ngIf="todo">
+            <ion-textarea placeholder="Ingredientes" [(ngModel)]="todo.ingredientes" required></ion-textarea>
+        </ion-item>
+        <ion-item *ngIf="todo">
+            <ion-textarea placeholder="Preparación" [(ngModel)]="todo.preparacion" required></ion-textarea>
+        </ion-item>
+        <ion-item *ngIf="todo">
+            <ion-textarea placeholder="Notas" [(ngModel)]="todo.notas" required></ion-textarea>
+        </ion-item>
+        <ion-item *ngIf="todo">
+          <ion-input type="number" placeholder="Priority" [(ngModel)]="todo.priority" required></ion-input>
+        </ion-item>
+        
+        
+        <ion-button expand="full" class="btn-block boton-menu" shape="round" (click)="saveTodo()">Save</ion-button>
+        
+      
+      </ion-col>
+
+      <ion-col size="4">
+        <ng-container *ngIf="!todos || todos.length == 0">
+          <div *ngFor="let n of [0,1,2]" padding>
+            <ion-skeleton-text></ion-skeleton-text>
+            <p>
+              <ion-skeleton-text class="text-skeleton"></ion-skeleton-text>
+            </p>
+          </div>
+        </ng-container>
+        <ion-grid class="text-center">
+          <ion-row class="center-text" *ngFor="let todo of todos">
+            <ion-col button (click)="irablog(todo.id)">
+              <img src="{{todo.img}}" class="list-img" alt="blog img" style="cursor: pointer;">
+              <h2>{{todo.task}}</h2>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+      </ion-col>
+
+    </ion-row>
+    <ion-row class="ocultar-pc">
+      <ion-col>
+        <div *ngIf="urlImage | async; else btnDisabled"> Imagen Actualizada </div>
+        <ng-template #btnDisabled>
+          Imagen Actual 
+        </ng-template>
+        <br>
+        <img *ngIf="todo.img" src="{{todo.img}}" width="100%">
+        <ion-card *ngIf="todo.img == '' " class="fucsia">
+          <ion-card-content>
+            <img src="/assets/img/preview.png" width="100%">
+          </ion-card-content>  
+        </ion-card>
+        <h5>Seleccionar image:</h5>
+        <input type="file" accept=".png, .jpg" (change)="onUpload($event)">
+        <br>
+        <input id="imagen" type="hidden" [(ngModel)]="todo.img" [value]="urlImage | async">
+        
+        
+        
+        <ion-item *ngIf="todo">
+          <ion-input type="text" placeholder="TITULO" [(ngModel)]="todo.task" required></ion-input>
+        </ion-item>
+        <ion-item *ngIf="todo">
+            <ion-textarea placeholder="Descripción Home" [(ngModel)]="todo.description" required></ion-textarea>
+        </ion-item>
+        <ion-item *ngIf="todo">
+            <ion-textarea placeholder="Ingredientes" [(ngModel)]="todo.ingredientes" required></ion-textarea>
+        </ion-item>
+        <ion-item *ngIf="todo">
+            <ion-textarea placeholder="Preparación" [(ngModel)]="todo.preparacion" required></ion-textarea>
+        </ion-item>
+        <ion-item *ngIf="todo">
+            <ion-textarea placeholder="Notas" [(ngModel)]="todo.notas" required></ion-textarea>
+        </ion-item>
+        <ion-item *ngIf="todo">
+          <ion-input type="number" placeholder="Priority" [(ngModel)]="todo.priority" required></ion-input>
+        </ion-item>
+        
+        
+        
+        <ion-button expand="full" class="btn-block boton-menu" shape="round" (click)="saveTodo()">Save</ion-button>
+        
+      
+      </ion-col>
+
+
+    </ion-row>
+
+
+  </ion-grid>
+  
+
+
+
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" color="danger">
+      <ion-fab-button color="danger" (click)="onRemoveTodo(todoId)" routerLink="/dashboard" routerDirection="forward">
+          <ion-icon name="trash"></ion-icon>
+      </ion-fab-button>
+  </ion-fab>
+</ion-content>

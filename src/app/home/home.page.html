@@ -1,44 +1,331 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>
-      Home
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content [scrollEvents]="true">
+  <div class="sticky">
+        <ion-header>
+          <ion-toolbar>
+            <ion-buttons class="icon-menu-movil" slot="end">
+              <ion-menu-button></ion-menu-button>
+            </ion-buttons>
+            <ion-grid class="menu-pc">
+              <ion-row>
+                <ion-col size="4">
+                  <a href="/home"><img src="/assets/img/logo.png" class="logo" alt="TannDulces"/></a>
+                  <a href="/home"><img src="/assets/img/logo-sticky.png" class="logo-sticky" alt="TannDulces"/></a>
+                </ion-col>
+                <ion-col size="8">
+                  <h2 class="text-right">
+                    <a (click)="scrollTo('section1')">NOSOTROS</a>
+                    <a (click)="scrollTo('section2')">SERVICIOS</a>
+                    <a (click)="scrollTo('section3')">CONTACTO</a>
+                  </h2>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+            <ion-title class="text-center">
+              <img src="/assets/img/logo.png" class="logo-movil" alt="TannDulces"/>
+            </ion-title>
+          </ion-toolbar>
+        </ion-header>
+  </div>
+  
+  
+  
+  <div class="fondo-tanndulces">
+    
+    <div class="container-general">
+      
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <iframe id="frame-banner" src="/assets/swiper.html" frameborder="0"></iframe>
+            <ion-row>
+              <ion-col class="ocultar-movil">
+              </ion-col>
+              <ion-col>
+                <ion-row class="social">
+                  <ion-col>
+                    <a href="" target="_blank"><img src="/assets/img/icon-facebook.png" class="icon-social" alt="Facebook"/></a>
+                    <a href="https://www.instagram.com/tanndulces/" target="_blank"><img src="/assets/img/icon-instagram.png" class="icon-social" alt="Linkedin"/></a>
+                    <!-- <a href="" target="_blank"><img src="/assets/img/icon-twitter.png" class="icon-social" alt="Twitter"/></a>
+                    <a href="" target="_blank"><img src="/assets/img/icon-linkedin.png" class="icon-social" alt="Linkedin"/></a> -->
+                  </ion-col>
+                  <ion-col class="text-right cambio-lenguaje">
+                      <a href="" class="white-text">ESP</a>&nbsp;&nbsp;
+                      <a href="" class="white-text bold">ENG</a>
+                  </ion-col>
+                </ion-row>
+                
+              </ion-col>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+      </ion-grid>  
+    </div>
 
-<ion-content>
-    <ion-card class="welcome-card">
-      <img src="/assets/shapes.svg" alt="" />
-      <ion-card-header>
-        <ion-card-subtitle>Get Started</ion-card-subtitle>
-        <ion-card-title>Welcome to Ionic</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <p>Now that your app has been created, you'll want to start building out features and components. Check out some of the resources below for next steps.</p>
-      </ion-card-content>
-    </ion-card>
-    <ion-list lines="none">
-      <ion-list-header>
-        <ion-label>Resources</ion-label>
-      </ion-list-header>
-      <ion-item href="https://ionicframework.com/docs/">
-        <ion-icon slot="start" color="medium" name="book"></ion-icon>
-        <ion-label>Ionic Documentation</ion-label>
-      </ion-item>
-      <ion-item href="https://ionicframework.com/docs/building/scaffolding">
-        <ion-icon slot="start" color="medium" name="build"></ion-icon>
-        <ion-label>Scaffold Out Your App</ion-label>
-      </ion-item>
-      <ion-item href="https://ionicframework.com/docs/layout/structure">
-        <ion-icon slot="start" color="medium" name="grid"></ion-icon>
-        <ion-label>Change Your App Layout</ion-label>
-      </ion-item>
-      <ion-item href="https://ionicframework.com/docs/theming/basics">
-        <ion-icon slot="start" color="medium" name="color-fill"></ion-icon>
-        <ion-label>Theme Your App</ion-label>
-      </ion-item>
-    </ion-list>
+  </div>
+  
+  <br><br>
+
+  <div id="section1" class="container-general">
+    <ion-grid>
+        <ion-row>
+          <ion-col size="12" size-md style="margin: 12% 0px;">
+            <div class="paddings">
+              <h2 class="azul-text"><b>LOCAMENTE DELICIOSO!</b></h2>
+              <h4>
+                <hr>&nbsp;&nbsp;<hr class="hr-short"><br>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe doloremque tempore nesciunt eligendi nobis? Enim corporis sint facilis ad est! Nulla earum suscipit optio laudantium tempora alias, expedita voluptas corporis.
+              </h4>
+            </div>
+          </ion-col>
+          <ion-col size="12" size-md>
+            <img src="/assets/img/productos/tres-leches-con-fudge.png" width="100%" alt="Torta 3 leches"/>
+          </ion-col>
+        </ion-row>
+        <ion-row class="text-center">
+          <ion-col>
+            <h2 class="fucsia-text">
+              <b>
+                HECHO EN CASA CON EL SABOR<br>
+                Y EL AMOR DE UNA PERSONA
+              </b>
+            </h2>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="ocultar-movil">
+            <ul class="lista-hecho-en-casa">
+              <li class="collection-item">Lorem ipsum dolor sit amet dolor sit amet dolor sit amet</li>
+              <li class="collection-item">Lorem ipsum dolor sit amet dolor sit amet dolor sit amet</li>
+              <li class="collection-item">Lorem ipsum dolor sit amet dolor sit amet dolor sit amet</li>
+            </ul>
+          </ion-col>
+          <ion-col size="12" size-md>
+              <img src="/assets/img/productos/pastel-de-fresa.png" width="100%" alt="Torta 3 leches"/>
+          </ion-col>
+          <ion-col size="12" size-md>
+            <ul class="lista-hecho-en-casa">
+              <li class="collection-item">Lorem ipsum dolor sit amet dolor sit amet dolor sit amet</li>
+              <li class="collection-item">Lorem ipsum dolor sit amet dolor sit amet dolor sit amet</li>
+              <li class="collection-item">Lorem ipsum dolor sit amet dolor sit amet dolor sit amet</li>
+            </ul>
+          </ion-col>
+        </ion-row>
+    </ion-grid>
+  </div>
+
+  <div class="fondo-comida-natural">
+    <div class="container-general comida-natural">
+      <ion-grid>
+        <ion-row class="text-center">
+          <ion-col>
+            <h2 class="white-text"><b>LA COMIDA NATURAL MAS SABROSA DE FLORIDA</b></h2>
+            <h2 class="white-text">
+              Arroz | Mariscos | Pastas | Pizzas | Cheescakes | Flan | Tortas
+            </h2>
+            <ion-button class="boton-menu" shape="round">MENU</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+    
+  </div>
+
+
+
+  <div id="section2" class="container-general">
+    <br><br><br><br>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12" size-md>
+          <ion-row>
+            <img src="/assets/img/productos/persona.png" class="persona" alt="Persona"/>
+            <img src="/assets/img/productos/vaso-fresa.png" class="vaso-fresa" alt="Vaso de Fresa"/>
+          </ion-row>
+          <ion-row>
+            <img src="/assets/img/productos/torta-de-fresa.png" class="torta-de-fresa" alt="Torta de Fresa"/>
+          </ion-row>
+          <div class="caja-fucsia">
+
+          </div>
+        </ion-col>
+        <ion-col size="12" size-md style="margin: 12% 0px;">
+          <div class="paddings">
+            <h2 class="azul-text text-right">
+              Lorem ipsum <br>
+              <b>Dolor sit amet, consectetuer</b>
+            </h2>
+            <h4>
+              <hr>&nbsp;&nbsp;<hr class="hr-short"><br>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe doloremque tempore nesciunt eligendi nobis? Enim corporis sint facilis ad est! Nulla earum suscipit optio laudantium tempora alias, expedita voluptas corporis.
+            </h4>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <br><br><br><br>
+  </div>
+
+  <br>
+
+  <div class="fondo-comida-natural">
+    <div class="container-general comida-natural">
+      <ion-grid>
+        <ion-row class="text-center">
+          <ion-col>
+            <h2 class="white-text">
+              QUIERES VENDER CON NOSOTROS<br>
+              Y HACER CRECER TU NEGOCIO?
+            </h2>
+          </ion-col>
+          <ion-col style="margin-top: 35px">
+            <a href="mailto:willyjosecanelon@gmail.com"><ion-button class="boton-menu" shape="round">CONTACTANOS</ion-button></a>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>  
+  </div>
+
+  <br><br>
+  
+  <div class="container-general">
+    <br><br><br><br>
+    <ion-grid class="blog ocultar-movil">
+      
+      <ion-row *ngFor="let todo of todos">
+        <ion-col size="12">
+            <ion-row>
+              <ion-col *ngIf="todo.priority == 1" class="fucsia">
+                <div style="margin: 12% 0px;">
+                  <div class="paddings white-text">
+                    <h2 class="bold">
+                      {{ todo.task }}
+                    </h2>
+                    {{ todo.priority }}
+                    <h4>
+                      <ion-textarea disabled value="{{todo.description}}"></ion-textarea>
+                    </h4>
+                    <br>
+                    <div class="text-center">
+                      <ion-button (click)="irablog(todo.id)" class="boton-menu" shape="round">BLOG</ion-button>
+                    </div>
+                  </div>
+                </div>
+              </ion-col>
+              <ion-col *ngIf="todo.priority == 1">
+                <img src="{{todo.img}}" alt="Blog Receta"/>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col *ngIf="todo.priority == 2">
+                <img src="{{todo.img}}" alt="Blog Receta"/>
+              </ion-col>
+              <ion-col *ngIf="todo.priority == 2" class="fucsia">
+                <div style="margin: 12% 0px;">
+                  <div class="paddings white-text">
+                    <h2>
+                      {{ todo.task }}
+                    </h2>
+                    {{ todo.priority }}
+                    <h4>
+                      <ion-textarea disabled value="{{todo.description}}"></ion-textarea>
+                    </h4>
+                    <br>
+                    <div class="text-center">
+                      <ion-button (click)="irablog(todo.id)" class="boton-menu" shape="round">BLOG</ion-button>
+                    </div>
+                  </div>
+                </div>
+              </ion-col>
+              
+            </ion-row>
+        </ion-col>
+        
+      </ion-row>
+
+    </ion-grid>
+
+    
+    <ion-grid class="blog-movil ocultar-pc">
+      <ion-slides pager="true" [options]="slideOpts">
+        <ion-slide *ngFor="let todo of todos" class="blog-movil-img" style="background: url('/assets/img/productos/pastelitos-musica.png');">
+          <div class="white-text">
+            <h2>
+              {{ todo.task }}
+           </h2>
+            <br>
+            <div class="text-center">
+              <ion-button (click)="irablog(todo.id)" class="boton-menu" shape="round">BLOG</ion-button>
+            </div>
+            <br>
+          </div>
+        </ion-slide>
+        
+
+      </ion-slides>
+    </ion-grid>
+    
+  </div>
+
+
+
+  <div class="container-general">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <iframe id="frame-galeria" src="/assets/swiper-galeria.html" frameborder="0"></iframe>
+          
+        </ion-col>
+      </ion-row>
+    </ion-grid> 
+  </div>
+
+
+
+
+  <div id="section3" class="fondo-footer">
+    <div class="container-general">  
+      <ion-grid>
+        <ion-row>
+          <img src="/assets/img/logo-transparente.png" class="logo-transparente" alt="TannDulces"/>
+          <ion-col>
+            <ion-card class="contact white">
+              <ion-card-header class="text-center">
+                <ion-card-title>CONTACTANOS</ion-card-title>
+                <ion-card-subtitle class="fucsia-text">PARA DISFRUTARLO EN LA COMODIDAD DE TU HOGAR</ion-card-subtitle>
+              </ion-card-header>
+              <ion-card-content>
+                <form>
+                <ion-item>
+                  <ion-input type="mail" placeholder="Correo" required></ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-input type="number" placeholder="Teléfono" required></ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-input type="text" placeholder="Mensaje" required></ion-input>
+                </ion-item>
+                <div class="text-center">
+                  <ion-button type="submit" shape="round">ENVIAR</ion-button>
+                </div>
+                </form>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>  
+    </div>
+    <ion-grid style="margin: -200px 0;">
+      <ion-row>
+        <ion-col>
+         </ion-col>
+        <ion-col class="text-right">
+          <img src="/assets/img/logo-transparente.png" width="70%" alt="TannDulces"/>
+        </ion-col>
+      </ion-row>
+    </ion-grid> 
+    
+  </div>
+
+
+  
 </ion-content>

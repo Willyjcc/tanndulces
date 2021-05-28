@@ -1,0 +1,119 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-grid class="menu-pc-blog">
+      <ion-row>
+        <ion-col>
+          <a href="/home"><img src="/assets/img/logo-sticky.png" class="logo-sticky" alt="TannDulces"/></a>  
+        </ion-col>
+        <ion-col class="text-right">
+          <a href="" target="_blank"><img src="/assets/img/icon-facebook.png" class="icon-social" alt="Facebook"/></a>
+          <a href="https://www.instagram.com/tanndulces/" target="_blank"><img src="/assets/img/icon-instagram.png" class="icon-social" alt="Instagram"/></a>
+          <!-- <a href="" target="_blank"><img src="/assets/img/icon-twitter.png" class="icon-social" alt="Twitter"/></a>
+          <a href="" target="_blank"><img src="/assets/img/icon-linkedin.png" class="icon-social" alt="Linkedin"/></a> -->
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <div class="container-general">
+    <ion-grid>
+      <ion-row class="ocultar-movil">
+        <ion-col size="8">
+          <h1 class="text-center fucsia-text">{{todo.task}}</h1>
+          <img src="{{todo.img}}" width="100%" alt="{{todo.task}}">
+          <h3>Ingredientes:</h3>
+          <h4>
+            <ion-textarea disabled value="{{todo.ingredientes}}"></ion-textarea>
+          </h4>
+          <h3 class="text-center"><hr></h3>
+          <h3>Preparación:</h3>
+          <h3>
+            <ion-textarea disabled value="{{todo.preparacion}}"></ion-textarea>
+          </h3>
+          <h3 class="text-center"><hr></h3>
+          <h3>
+            Notas:
+            <br><br>
+            {{todo.notas}} 
+          </h3>
+        </ion-col>
+        <ion-col class="text-center" size="4">
+          <br><br>
+          <ion-grid>
+            <ion-row *ngFor="let todo of todos">
+              <ion-col>
+                <img src="{{todo.img}}" class="list-img" alt="blog imagen" (click)="irablog(todo.id)" style="cursor: pointer;">
+                <h2>{{ todo.task }}</h2>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ocultar-pc">
+          <ion-col size="12">
+            <h1 class="text-center fucsia-text">{{todo.task}}</h1>
+            <img src="{{todo.img}}" width="100%" alt="{{todo.task}}">
+            <h3>Ingredientes:</h3>
+            <h4>
+              <ion-textarea disabled value="{{todo.ingredientes}}"></ion-textarea>
+            </h4>
+            <h3>Preparación:</h3>
+            <h3>
+              <ion-textarea disabled value="{{todo.preparacion}}"></ion-textarea>
+            </h3>
+            <hr>&nbsp;&nbsp;<hr class="hr-short"><br>
+            <h3>
+              Notas:
+              <br><br>
+              {{todo.notas}} 
+            </h3>
+          </ion-col>
+          <ion-col class="text-center" size="12">
+            
+            <br><br>
+            <ion-row *ngFor="let todo of todos">
+              <ion-col>
+                <img src="{{todo.img}}" class="list-img" alt="Galletas Con Almendras" (click)="irablog(todo.id)">
+                <h2>{{todo.task}}</h2>
+              </ion-col>
+            </ion-row>
+
+          </ion-col>
+        </ion-row>
+    </ion-grid>  
+  </div>
+
+
+
+
+
+
+
+
+
+
+  <div class="fucsia">
+    <div class="container-general">  
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <a href="/home"><img src="/assets/img/logo-transparente.png" width="150px" alt="TannDulces"/></a>  
+          </ion-col>
+          <ion-col class="text-right">
+            <a href="" target="_blank"><img src="/assets/img/icon-facebook.png" class="icon-social" alt="Facebook"/></a>
+            <a href="https://www.instagram.com/tanndulces/" target="_blank"><img src="/assets/img/icon-instagram.png" class="icon-social" alt="Instagram"/></a>
+            <!-- <a href="" target="_blank"><img src="/assets/img/icon-twitter.png" class="icon-social" alt="Twitter"/></a>
+            <a href="" target="_blank"><img src="/assets/img/icon-linkedin.png" class="icon-social" alt="Linkedin"/></a> -->
+          </ion-col>
+        </ion-row>
+      </ion-grid>  
+    </div>
+
+  </div>
+</ion-content>

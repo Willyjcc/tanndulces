@@ -1,0 +1,89 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-grid class="menu-pc-blog">
+      <ion-row>
+        <ion-col>
+          <a href="/home"><img src="/assets/img/logo-sticky.png" class="logo-sticky" alt="TannDulces"/></a>  
+        </ion-col>
+        <ion-col class="text-right">
+            <a (click)="Onlogout()" target="_blank"><img src="/assets/img/logout.png" class="icon-social" alt="Logout"/></a>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="container-general">
+    <ng-container *ngIf="!todos || todos.length == 0">
+      <div *ngFor="let n of [0,1,2]" padding>
+        <ion-skeleton-text></ion-skeleton-text>
+        <p>
+          <ion-skeleton-text class="text-skeleton"></ion-skeleton-text>
+        </p>
+      </div>
+    </ng-container>
+    <ion-grid>
+      <ion-row>
+        <ion-col class="ocultar-movil" size="6" *ngFor="let todo of todos">
+          <ion-card lines="inset" button (click)="irablog(todo.id)">
+            <ion-row>
+              <ion-col>
+                <img src="{{todo.img}}" class="dashboard-img-blog" alt="blog imagen">
+              </ion-col>
+              <ion-col class="text-center">
+                <h2 class="fucsia-text">
+                  {{ todo.task }}
+                </h2>
+                <ion-button class="boton-menu" shape="round">Ver</ion-button>  
+                <ion-note slot="end" color="primary">{{ todo.priority }}</ion-note>      
+              </ion-col>
+            </ion-row>
+          </ion-card>
+        </ion-col>
+
+        <ion-col class="ocultar-pc" size="12" *ngFor="let todo of todos">
+          <ion-card lines="inset" button (click)="irablog(todo.id)">
+            <ion-row>
+              <ion-col>
+                <img src="{{todo.img}}" class="dashboard-img-blog" alt="blog imagen">
+              </ion-col>
+              <ion-col class="text-center">
+                <h2 class="fucsia-text">
+                  {{ todo.task }}
+                </h2>
+                <ion-button class="boton-menu" shape="round">Ver</ion-button>  
+                <ion-note slot="end" color="primary">{{ todo.priority }}</ion-note>      
+              </ion-col>
+            </ion-row>
+          </ion-card>
+        </ion-col>
+
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <ion-list hidden>
+    
+    <ion-item-sliding *ngFor="let todo of todos">
+      <ion-item lines="inset" button [routerLink]="['/details', todo.id]">
+        <ion-label>
+          {{ todo.task }}
+        </ion-label>
+        <ion-note slot="end" color="primary">{{ todo.priority }}</ion-note>
+      </ion-item>
+ 
+      <ion-item-options side="end">
+        <ion-item-option (click)="onRemove(todo.id)" color="secondary">
+          Check
+          <ion-icon name="checkmark" slot="end"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+ <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button routerLink="/details" routerDirection="forward">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

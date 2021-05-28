@@ -1,0 +1,61 @@
+ion-header ion-toolbar:first-child {
+    padding-top: var(--ion-safe-area-top,0);
+    background: url('/assets/img/fondo-comida-natural.png');
+    background-size:cover;
+    .logo-sticky{
+        width: 150px;
+    }
+    .icon-social{
+        width: 40px;
+        margin: 20px 5px;
+    }
+}
+.header-ios ion-toolbar:last-child {
+    --border-width: 0 0 0px;
+    position: relative;
+    top: -5px;
+}
+ion-header ion-toolbar .sc-ion-buttons-md-s .button, .header-ios ion-toolbar .sc-ion-buttons-md-s .button {
+    font-size: 40px;
+    margin: 0 0;
+}
+ion-header ion-toolbar .sc-ion-buttons-md-s .button, ion-header ion-toolbar .sc-ion-buttons-ios-s .button, .header-ios ion-toolbar .sc-ion-buttons-md-s .button, .header-ios ion-toolbar .sc-ion-buttons-ios-s .button {
+    --background-hover: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    margin-top: 0px;
+    font-size: 20px;
+}
+.container-general{
+    max-width: 1200px;
+}
+ion-icon{
+    font-size: 3rem;
+    color: #fff;
+    cursor: pointer;
+}
+ion-textarea{
+    height: 150px;
+}
+.boton-menu{
+    --background: #9c0332;   
+    border-radius: 20px;
+    border: solid 1.5px;
+    height: 40px;
+    width: 150px;
+    color:#fff;
+    margin: 0 auto;
+}
+ion-card{
+    img {
+        width: 150px;
+        margin: 0 auto;
+    }
+}
+.list-img{
+    -webkit-box-shadow: 0px -5px 0px 0px rgba(156,3,50,1);
+    -moz-box-shadow: 0px -5px 0px 0px rgba(156,3,50,1);
+    box-shadow: 0px -5px 0px 0px rgba(156,3,50,1);
+    width: 90%;
+    border-radius: 10px;
+    cursor: pointer;
+}
